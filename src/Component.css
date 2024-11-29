@@ -51,7 +51,7 @@ body {
 }
 
 .filter-button-container {
-  position: relative; /* Define un contexto de posición para el botón y la lista desplegable */
+  position: relative;
 }
 
 .filter-button-container button {
@@ -69,18 +69,18 @@ body {
 }
 
 .dropdown-menu {
-  position: absolute; /* Relativo al contenedor padre (filter-button-container) */
+  position: absolute;
   background-color: white;
   border: 1px solid #ccc;
   padding: 10px;
-  top: 100%; /* Ubica la lista justo debajo del botón */
+  top: 100%;
   left: 0;
   width: 150px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 10; /* Asegura que esté por encima de otros elementos */
+  z-index: 10;
 }
 
 .dropdown-menu button {
@@ -96,7 +96,6 @@ body {
 .dropdown-menu button:hover {
   background-color: #2d4373;
 }
-
 
 .section-title {
   font-size: 30px;
@@ -115,7 +114,7 @@ body {
   background-color: #ffff;
   padding: 20px;
   display: flex;
-  flex: 1 0 48%; 
+  flex: 1 0 48%;
   max-width: 48%;
   flex-direction: column;
   align-items: center;
@@ -163,22 +162,13 @@ body {
   pointer-events: none;
 }
 
-/* Aseguramos que el contenido principal no se solape con el menú */
-
-/* Filtro de precios */
 .price-filter {
   display: flex;
   gap: 10px;
   margin-left: 20px;
 }
 
-.price-filter input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
+.price-filter input,
 .price-filter select {
   padding: 10px;
   border-radius: 5px;
@@ -192,13 +182,7 @@ body {
   margin-left: 20px;
 }
 
-.filter-order input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
+.filter-order input,
 .filter-order select {
   padding: 10px;
   border-radius: 5px;
@@ -224,19 +208,17 @@ body {
   font-style: italic;
 }
 
-
 .horizontal-bar {
   display: flex;
-  justify-content: center; /* Centra los filtros horizontalmente */
-  align-items: center; /* Alineación vertical */
-  gap: 10px; /* Espacio entre filtros */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
-  max-width: 600px; /* Limita el tamaño del contenedor */
-  margin-left: auto; /* Centra el contenedor */
-  margin-right: auto; /* Centra el contenedor */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Estilo del Modal */
 .menu-item-modal {
   background-color: white;
   color: black;
@@ -272,9 +254,9 @@ body {
 
 .cart-container {
   padding: 20px;
-  background-color: #f8f8f8; /* Fondo claro para el carrito */
+  background-color: #f8f8f8;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   margin: 20px auto;
   font-family: Arial, sans-serif;
@@ -283,7 +265,7 @@ body {
 
 .cart-item {
   display: flex;
-  flex-direction: column; /* Apila los elementos verticalmente */
+  flex-direction: column;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -294,11 +276,11 @@ body {
 
 .cart-item .cart-item-details {
   font-size: 16px;
-  margin-bottom: 10px; /* Espacio entre el producto y el botón */
+  margin-bottom: 10px;
 }
 
 .remove-button {
-  background-color: #ff4d4d; /* Rojo para el botón de eliminar */
+  background-color: #ff4d4d;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -306,13 +288,78 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px; /* Espacio entre el texto y el botón */
+  margin-top: 10px;
 }
 
 .remove-button:hover {
-  background-color: #e60000; /* Rojo más oscuro al pasar el ratón */
+  background-color: #e60000;
 }
 
 .remove-button:focus {
-  outline: none; /* Elimina el contorno del botón cuando se hace clic */
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .horizontal-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 180px;
+    height: 180px;
+    margin-right: 0;
+  }
+
+  .main-container {
+    padding: 5px;
+  }
+
+  .price-filter, .filter-order, .search-bar {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .cart-container {
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .menu-item-modal {
+    padding: 15px;
+  }
+
+  .filter-button-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .menu-description {
+    padding: 0 10px;
+  }
+
+  .button-container button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .price-filter input, .price-filter select,
+  .filter-order input, .filter-order select {
+    font-size: 14px;
+    padding: 8px;
+  }
 }

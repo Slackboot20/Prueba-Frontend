@@ -66,13 +66,13 @@ export default function Component() {
 
   const handlePurchase = (item) => {
     if (!purchasedItems.some(purchasedItem => purchasedItem.id === item.id)) {
-      setPurchasedItems([...purchasedItems, item]); // Agregar al carrito si no está presente
+      setPurchasedItems([...purchasedItems, item]);
     }
     closeModal()
   };
 
   const removeFromCart = (item) => {
-    setPurchasedItems(purchasedItems.filter(purchasedItem => purchasedItem.id !== item.id)); // Eliminar del carrito
+    setPurchasedItems(purchasedItems.filter(purchasedItem => purchasedItem.id !== item.id));
   };
 
   const scrollToSection = (id) => {
